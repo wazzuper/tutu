@@ -1,0 +1,12 @@
+<%= form_for(@ticket) do |f| %>
+  <%= render 'common/errors', resource: @ticket %>
+
+  <div class="field">
+    <%= f.label :number %>
+    <%= f.text_field :number %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "#{@ticket.new_record? ? 'Создать' : 'Изменить'}" %>
+  </div>
+<% end %>

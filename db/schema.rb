@@ -37,8 +37,10 @@ ActiveRecord::Schema.define(version: 20161221142050) do
     t.integer  "user_id"
     t.integer  "first_station_id"
     t.integer  "last_station_id"
+    t.integer  "route_id"
     t.index ["first_station_id"], name: "index_tickets_on_first_station_id"
     t.index ["last_station_id"], name: "index_tickets_on_last_station_id"
+    t.index ["route_id"], name: "index_tickets_on_route_id"
     t.index ["train_id"], name: "index_tickets_on_train_id"
     t.index ["user_id"], name: "index_tickets_on_user_id"
   end
