@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Номер:</strong>
+  <%= @wagon.number %>
+</p>
+
+<%= link_to 'Редактировать', edit_wagon_path(@wagon) %> |
+<%= link_to 'Назад', wagons_path %>
