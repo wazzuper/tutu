@@ -2,8 +2,23 @@
   <%= render 'common/errors', resource: @wagon %>
 
   <div class="field">
-    <%= f.label :number %>
-    <%= f.text_field :number %>
+    <%= f.label :wagon_type, 'Тип вагона'%>
+    <%= f.select :wagon_type, ['Купе', 'Плацкарт']%>
+  </div>
+
+  <div class="field">
+    <%= f.label :top_place, 'Количество верхних мест'%>
+    <%= f.text_field :top_place%>
+  </div>
+
+  <div class="field">
+    <%= f.label :bottom_place, 'Количество нижних мест'%>
+    <%= f.text_field :bottom_place%>
+  </div>
+
+  <div class="field">
+    <%= f.label :train, 'Выберите поезд' %>
+    <%= f.collection_select :train_id, Train.all, :id, :number %>
   </div>
 
   <div class="actions">

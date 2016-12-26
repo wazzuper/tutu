@@ -23,5 +23,18 @@
   <% end %>
 </p>
 
+<p>
+  <strong>Вагоны в составе поезда:</strong>
+  <% if @train.wagons.empty? %>
+    вагонов у данного поезда нет
+  <% else %>
+    <ul>
+      <% @train.wagons.each do |wagon| %>
+        <li>тип: <%= wagon.wagon_type %>, верхних мест: <%= wagon.top_place %>, нижних мест: <%= wagon.bottom_place %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</p>
+
 <%= link_to 'Редактировать', edit_train_path(@train) %> |
 <%= link_to 'Назад', trains_path %>
