@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Параметры вагона:</strong>
+</p>
+
+ <ul>
+  <li>Тип: <%= @wagon.wagon_type %></li>
+  <li>Количество верхних мест: <%= @wagon.top_place %></li>
+  <li>Количество нижних мест: <%= @wagon.bottom_place %></li>
+ </ul>
+
+<p>
+  <strong>Текущий поезд:</strong>
+  <% if @wagon.train %>
+      <%= @wagon.train.number %>
+    <% else %>
+      поезд не назначен
+    <% end %>
+</p>
+
+<%= link_to 'Редактировать', edit_wagon_path(@wagon) %> |
+<%= link_to 'Назад', wagons_path %>
