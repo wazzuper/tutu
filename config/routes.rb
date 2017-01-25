@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
   resources :wagons
+  resources :coupe_wagons, controller: 'wagons'
+  resources :economy_wagons, controller: 'wagons'
+  resources :sw_wagons, controller: 'wagons'
+  resources :sitting_wagons, controller: 'wagons'
   resources :users
   resources :tickets
   resources :routes

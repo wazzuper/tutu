@@ -6,6 +6,13 @@ class WagonsController < ApplicationController
   end
 
   def show
+    if @wagon.type == 'EconomyWagon'
+      render :economy_wagon
+    elsif @wagon.type == 'SwWagon'
+      render :sw_wagon
+    elsif @wagon.type == 'SittingWagon'
+      render :sitting_wagon        
+    end
   end
 
   def new
@@ -14,7 +21,6 @@ class WagonsController < ApplicationController
 
   def create
     @wagon = Wagon.new(wagon_params)
-
 
     if @wagon.save
       redirect_to @wagon
@@ -46,6 +52,7 @@ class WagonsController < ApplicationController
   end
 
   def wagon_params
-    params.require(:wagon).permit(:wagon_type, :top_place, :bottom_place, :train_id)
+    params.require(:wagon).permit(:number, :wagon_type, :top_seats, :bottom_seats,
+                                  :side_top_seats, :side_bottom_seats, :sitting_seats, :train_id)
   end
 end
