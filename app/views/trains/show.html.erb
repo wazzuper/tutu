@@ -30,7 +30,7 @@
   <% else %>
     <ul>
       <% @train.wagons.each do |wagon| %>
-        <li>тип: <%= wagon.wagon_type %>, верхних мест: <%= wagon.top_place %>, нижних мест: <%= wagon.bottom_place %></li>
+        <li><%= wagon.number %> <%= link_to 'вагон', wagon %></li>
       <% end %>
     </ul>
   <% end %>
