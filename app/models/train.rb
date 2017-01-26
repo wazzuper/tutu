@@ -9,4 +9,8 @@ class Train < ApplicationRecord
   def sort_wagons
     sort_wagon ? wagons.sort_10 : wagons.sort_01
   end
+
+  def seats_amount(wagon_type, seats_type)
+    wagons.where(type: wagon_type).sum(seats_type)
+  end
 end
