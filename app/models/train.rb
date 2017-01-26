@@ -5,4 +5,8 @@ class Train < ApplicationRecord
   belongs_to :route
 
   validates :number, presence: true
+
+  def sort_wagons
+    sort_wagon ? wagons.sort_10 : wagons.sort_01
+  end
 end

@@ -29,7 +29,7 @@
     вагонов у данного поезда нет
   <% else %>
     <ul>
-      <% @train.wagons.each do |wagon| %>
+      <% @train.sort_wagons.each do |wagon| %>
         <li><%= link_to "#{wagon.number} - #{wagon.wagon_type}", wagon %></li>
       <% end %>
     </ul>

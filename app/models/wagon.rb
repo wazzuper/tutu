@@ -6,6 +6,9 @@ class Wagon < ApplicationRecord
 
   before_validation :set_type, :set_number
 
+  scope :sort_10, -> { order(:number) }
+  scope :sort_01, -> { order('number DESC') }
+
   private
 
   def set_type
