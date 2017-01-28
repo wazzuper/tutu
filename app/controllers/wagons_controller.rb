@@ -6,13 +6,7 @@ class WagonsController < ApplicationController
   end
 
   def show
-    if @wagon.type == 'EconomyWagon'
-      render :economy_wagon
-    elsif @wagon.type == 'SwWagon'
-      render :sw_wagon
-    elsif @wagon.type == 'SittingWagon'
-      render :sitting_wagon        
-    end
+    render @wagon.type.underscore
   end
 
   def new
