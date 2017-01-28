@@ -2,8 +2,8 @@
   <%= render 'common/errors', resource: @wagon %>
 
   <div class="field">
-    <%= f.label :wagon_type, 'Тип вагона'%>
-    <%= f.select :wagon_type, ['Купе', 'Плацкарт', 'СВ', 'Сидячие места']%>
+    <%= f.label :type, 'Тип вагона'%>
+    <%= f.select :type, Wagon::TYPES, {}%>
   </div>
 
   <div class="field">

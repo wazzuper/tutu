@@ -72,7 +72,6 @@ ActiveRecord::Schema.define(version: 20170126141958) do
     t.integer  "side_top_seats"
     t.integer  "side_bottom_seats"
     t.integer  "sitting_seats"
-    t.string   "wagon_type"
     t.string   "type"
     t.datetime "created_at",        null: false
     t.datetime "updated_at",        null: false

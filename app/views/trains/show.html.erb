@@ -30,7 +30,7 @@
   <% else %>
     <ul>
       <% @train.sort_wagons.each do |wagon| %>
-        <li><%= link_to "#{wagon.number} - #{wagon.wagon_type}", wagon %></li>
+        <li><%= link_to "#{wagon.number} - #{wagon.type}", wagon %></li>
       <% end %>
     </ul>
   <% end %>
