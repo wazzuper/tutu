@@ -19,7 +19,7 @@ class Wagon < ApplicationRecord
   private
 
   def set_number
-    numb = Wagon.where(train_id: train).maximum(:number)
+    numb = train.wagons.maximum(:number)
     self.number = numb ? numb + 1 : 1
   end
 end
