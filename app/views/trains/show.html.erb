@@ -29,8 +29,8 @@
     вагонов у данного поезда нет
   <% else %>
     <ul>
-      <% @train.wagons.each do |wagon| %>
-        <li>тип: <%= wagon.wagon_type %>, верхних мест: <%= wagon.top_place %>, нижних мест: <%= wagon.bottom_place %></li>
+      <% @train.sort_wagons.each do |wagon| %>
+        <li><%= link_to "#{wagon.number} - #{wagon.type}", wagon %></li>
       <% end %>
     </ul>
   <% end %>
