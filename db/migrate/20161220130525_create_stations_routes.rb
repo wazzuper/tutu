@@ -4,6 +4,8 @@ class CreateStationsRoutes < ActiveRecord::Migration[5.0]
       t.integer :railway_station_id
       t.integer :route_id
       t.integer :number
+      t.time :arrival_time
+      t.time :departure_time
     end
   end
 end

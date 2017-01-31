@@ -30,6 +30,14 @@
               <%= submit_tag 'Изменить' %>
             <% end %>
           </td>
+          <td>
+            <%= form_tag update_time_railway_station_path(station), method: :patch do %>
+              <%= time_field_tag :arrival_time, station.arrival_time_in(@route) %>
+              <%= time_field_tag :departure_time, station.departure_time_in(@route) %>
+              <%= hidden_field_tag :route_id, @route.id %>
+              <%= submit_tag 'Изменить' %>
+            <% end %>
+          </td>
         </tr>
       <% end %>
     </tbody>
