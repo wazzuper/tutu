@@ -2,11 +2,14 @@
   <%= render 'common/errors', resource: @ticket %>
 
   <div class="field">
-    <%= f.label :number %>
+    <%= f.label :fio, 'ФИО' %>
+    <%= f.text_field :fio %>
+  </div>
+
+  <div class="field">
+    <%= f.label :document, 'Паспортные данные' %>
     <%= f.text_field :number %>
   </div>
 
-  <div class="actions">
-    <%= f.submit "#{@ticket.new_record? ? 'Создать' : 'Изменить'}" %>
-  </div>
+  <%= f.submit 'Купить' %>
 <% end %>

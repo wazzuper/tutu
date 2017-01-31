@@ -1,1 +1,45 @@
 <h1>Поиск билетов</h1>
+
+<%= form_for :search do |f| %>
+
+  <div class="field">
+    <%= f.label :arrival_station, 'Начальная станция' %>
+    <%= f.collection_select :arrival_station_id, @stations, :id, :title, {} %>
+  </div>
+
+  <div class="field">
+    <%= f.label :departure_station, 'Конечная станция' %>
+    <%= f.collection_select :departure_station_id, @stations, :id, :title, {} %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit 'Поиск' %>
+  </div>
+
+  <% if @routes %>
+    <h2>Результат поиска</h2>
+    <table>
+      <thead>
+        <tr>
+        <th>Поезд</th>
+        <th>Маршрут</th>
+        <th>Время отправления</th>
+        <th>Время прибытия</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @routes.each do |route| %>
+          <tr>
+            <% route.trains.each do |train| %>
+              <td><%= train.number %></td>
+            <% end %>
+            <td><%= route.name %></td>
+            <td><%= route.railway_stations.first.arrival_time_in(route) %></td>
+            <td><%= route.railway_stations.last.departure_time_in(route) %></td>
+            <td><%= link_to 'Купить билет', new_ticket_path %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  <% end %>
+<% end %>

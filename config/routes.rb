@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :users
   resources :tickets
   resources :routes
-  resource :search, only: [:new, :show, :edit]
+  resource :search, only: [:show, :create]
 
   resources :trains do
     resources :wagons, shallow: true
