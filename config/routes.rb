@@ -1,13 +1,17 @@
 Rails.application.routes.draw do
-  resources :wagons
-  resources :coupe_wagons, controller: 'wagons'
-  resources :economy_wagons, controller: 'wagons'
-  resources :sw_wagons, controller: 'wagons'
-  resources :sitting_wagons, controller: 'wagons'
   resources :users
   resources :tickets
   resources :routes
-  resources :trains
+  resource :search, only: [:new, :show, :edit]
+
+  resources :trains do
+    resources :wagons, shallow: true
+    resources :coupe_wagons, shallow: true, controller: 'wagons'
+    resources :economy_wagons, shallow: true, controller: 'wagons'
+    resources :sw_wagons, shallow: true, controller: 'wagons'
+    resources :sitting_wagons, shallow: true, controller: 'wagons'
+  end
+
   resources :railway_stations do
     patch :update_position, on: :member
   end

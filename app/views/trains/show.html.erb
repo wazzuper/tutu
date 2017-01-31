@@ -29,11 +29,15 @@
     вагонов у данного поезда нет
   <% else %>
     <ul>
-      <% @train.sort_wagons.each do |wagon| %>
-        <li><%= link_to "#{wagon.number} - #{wagon.type}", wagon %></li>
+      <% @train.wagons.each do |wagon| %>
+        <li><%= link_to "Вагон №#{wagon.number} - #{wagon.type}", wagon %></li>
       <% end %>
     </ul>
   <% end %>
+</p>
+
+<p>
+<%= link_to 'Добавить вагон', new_train_wagon_path(@train) %>
 </p>
 
 <%= link_to 'Редактировать', edit_train_path(@train) %> |
