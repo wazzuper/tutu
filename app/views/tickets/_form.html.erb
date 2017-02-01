@@ -1,6 +1,10 @@
 <%= form_for(@ticket) do |f| %>
   <%= render 'common/errors', resource: @ticket %>
 
+  <%= f.hidden_field :train_id %>
+  <%= f.hidden_field :first_station_id %>
+  <%= f.hidden_field :last_station_id %>
+
   <div class="field">
     <%= f.label :fio, 'ФИО' %>
     <%= f.text_field :fio %>
@@ -8,8 +12,8 @@
 
   <div class="field">
     <%= f.label :document, 'Паспортные данные' %>
-    <%= f.text_field :number %>
+    <%= f.text_field :document %>
   </div>
 
-  <%= f.submit 'Купить' %>
+  <%= f.submit "#{@ticket.new_record? ? 'Купить' : 'Обновить' }" %>
 <% end %>

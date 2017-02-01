@@ -1,22 +1,22 @@
 <h1>Поиск билетов</h1>
 
-<%= form_for :search do |f| %>
+<%= form_for @search, method: :post, url: search_path do |f| %>
 
   <div class="field">
-    <%= f.label :arrival_station, 'Начальная станция' %>
-    <%= f.collection_select :arrival_station_id, @stations, :id, :title, {} %>
+    <%= f.label :first_station_id, 'Начальная станция' %>
+    <%= f.collection_select :first_station_id, RailwayStation.all, :id, :title, {} %>
   </div>
 
   <div class="field">
-    <%= f.label :departure_station, 'Конечная станция' %>
-    <%= f.collection_select :departure_station_id, @stations, :id, :title, {} %>
+    <%= f.label :last_station_id, 'Конечная станция' %>
+    <%= f.collection_select :last_station_id, RailwayStation.all, :id, :title, {} %>
   </div>
 
   <div class="actions">
     <%= f.submit 'Поиск' %>
   </div>
 
-  <% if @routes %>
+  <% if @search.search_result %>
     <h2>Результат поиска</h2>
     <table>
       <thead>
@@ -28,15 +28,18 @@
         </tr>
       </thead>
       <tbody>
-        <% @routes.each do |route| %>
+        <% @search.search_result.each do |result| %>
           <tr>
-            <% route.trains.each do |train| %>
-              <td><%= train.number %></td>
-            <% end %>
-            <td><%= route.name %></td>
-            <td><%= route.railway_stations.first.arrival_time_in(route) %></td>
-            <td><%= route.railway_stations.last.departure_time_in(route) %></td>
-            <td><%= link_to 'Купить билет', new_ticket_path %></td>
+            <td><%= result.number %></td>
+            <td><%= result.route.name %></td>
+            <td><%= @search.find_arrival_station.arrival_time_in(result.route) %></td>
+            <td><%= @search.find_departure_station.departure_time_in(result.route) %></td>
+            <td>
+              <%= link_to 'Купить билет', new_ticket_path(ticket: { train_id: result.id,
+                                                                    first_station_id: @search.first_station_id,
+                                                                    last_station_id: @search.last_station_id
+                                                                    }) %>
+            </td>
           </tr>
         <% end %>
       </tbody>
