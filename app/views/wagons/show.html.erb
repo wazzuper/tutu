@@ -4,11 +4,14 @@
   <strong>Параметры вагона:</strong>
 </p>
 
- <ul>
-  <li>Тип: <%= @wagon.wagon_type %></li>
-  <li>Количество верхних мест: <%= @wagon.top_seats %></li>
-  <li>Количество нижних мест: <%= @wagon.bottom_seats %></li>
- </ul>
+<p>
+  Тип: <%= @wagon.type %>
+</p>
+<p>
+  Номер: <%= @wagon.number %>
+</p>
+
+<%= render @wagon.type.underscore %>
 
 <p>
   <strong>Текущий поезд:</strong>
@@ -20,4 +23,4 @@
 </p>
 
 <%= link_to 'Редактировать', edit_wagon_path(@wagon) %> |
-<%= link_to 'Назад', wagons_path %>
+<%= link_to 'Назад', @wagon.train %>
