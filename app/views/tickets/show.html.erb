@@ -1,0 +1,15 @@
+<h1>Информация о билете</h1>
+
+<% if current_user.id != @ticket.user.id %>
+  У вас нет прав для просмотра чужих билетов
+<% else %>
+  <p><strong>Билет купил:</strong> <%= @ticket.user.email %></p>
+  <p><strong>ФИО:</strong> <%= @ticket.fio %></p>
+  <p><strong>Данные документа:</strong> <%= @ticket.document %></p>
+  <p><strong>Станция отправления:</strong> <%= @ticket.first_station.title %></p>
+  <p><strong>Станция назначения:</strong> <%= @ticket.last_station.title %></p>
+<% end %>
+
+<br>
+
+<%= link_to 'Назад к списку ваших билетов', tickets_path %>

@@ -1,0 +1,23 @@
+<h1>Список ваших билетов</h1>
+
+<% if current_user.tickets.empty? %>
+    Вы не купили ни одного билета
+<% else %>
+  <table>
+    <thead>
+      <tr>
+        <th>Билет</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <%= render @tickets %>
+    </tbody>
+  
+  </table>
+<% end %>
+
+<br>
+
+<%= link_to 'Купить новый билет', search_path %>
