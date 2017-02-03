@@ -1,9 +1,20 @@
 <%= form_for [:admin, @ticket] do |f| %>
   <%= render 'common/errors', resource: @ticket %>
 
-  <%= f.hidden_field :train_id %>
-  <%= f.hidden_field :first_station_id %>
-  <%= f.hidden_field :last_station_id %>
+  <div class="field">
+    <%= f.label :first_station_id, 'Начальная станция' %>
+    <%= f.collection_select :first_station_id, RailwayStation.all, :id, :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :last_station_id, 'Конечная станция' %>
+    <%= f.collection_select :last_station_id, RailwayStation.all, :id, :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :train_id, 'Поезд' %>
+    <%= f.collection_select :train_id, Train.all, :id, :number %>
+  </div>
 
   <div class="field">
     <%= f.label :fio, 'ФИО' %>
@@ -15,5 +26,10 @@
     <%= f.text_field :document %>
   </div>
 
-  <%= f.submit "#{@ticket.new_record? ? 'Купить' : 'Обновить' }" %>
+  <div class="field">
+    <%= f.label :user_id, 'Зарегистрированные пользователи' %>
+    <%= f.collection_select :user_id, User.all, :id, :email %>
+  </div>
+
+  <%= f.submit "#{@ticket.new_record? ? 'Создать' : 'Обновить' }" %>
 <% end %>

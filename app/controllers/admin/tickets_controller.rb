@@ -1,6 +1,5 @@
 class Admin::TicketsController < Admin::BaseController
   before_action :set_ticket, only: [:show, :edit, :update, :destroy]
-  before_action :hidden_params, only: [:new, :create]
 
   def index
     @tickets = Ticket.all
@@ -10,7 +9,10 @@ class Admin::TicketsController < Admin::BaseController
   end
 
   def new
-    @ticket = Ticket.new(new_ticket_params)
+    @ticket = Ticket.new(train_id: params[:train_id],
+                        first_station_id: params[:first_station_id],
+                        last_station_id: params[:last_station_id],
+                        user_id: params[:user_id])
   end
 
   def create
@@ -46,16 +48,6 @@ class Admin::TicketsController < Admin::BaseController
   end
 
   def ticket_params
-    params.require(:ticket).permit(:train_id, :first_station_id, :last_station_id, :fio, :document)
-  end
-
-  def new_ticket_params
-    params.require(:ticket).permit(:train_id, :first_station_id, :last_station_id)
-  end
-
-  def hidden_params
-    @train = Train.find(new_ticket_params[:train_id])
-    @first_station = RailwayStation.find(new_ticket_params[:first_station_id])
-    @last_station = RailwayStation.find(new_ticket_params[:last_station_id])
+    params.require(:ticket).permit(:train_id, :first_station_id, :last_station_id, :fio, :document, :user_id)
   end
 end
