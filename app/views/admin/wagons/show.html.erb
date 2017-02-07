@@ -1,0 +1,24 @@
+<p>
+  <strong>Параметры вагона:</strong>
+</p>
+
+<p>
+  Тип: <%= @wagon.type %>
+</p>
+<p>
+  Номер: <%= @wagon.number %>
+</p>
+
+<%= render @wagon.type.underscore %>
+
+<p>
+  <strong>Текущий поезд:</strong>
+  <% if @wagon.train %>
+      <%= @wagon.train.number %>
+    <% else %>
+      поезд не назначен
+    <% end %>
+</p>
+
+<%= link_to 'Редактировать', edit_admin_wagon_path(@wagon) %> |
+<%= link_to 'Назад', [:admin, @wagon.train] %>

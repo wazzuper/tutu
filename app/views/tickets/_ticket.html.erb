@@ -1,0 +1,5 @@
+<tr>
+  <td><%= "#{ticket.first_station.title} - #{ticket.last_station.title}" %></td>
+  <td><%= link_to 'Показать информацию о билете', ticket %></td>
+  <td><%= link_to 'Отменить билет', ticket, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+</tr>

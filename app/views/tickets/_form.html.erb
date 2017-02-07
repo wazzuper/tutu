@@ -1,4 +1,4 @@
-<%= form_for(@ticket) do |f| %>
+<%= form_for @ticket do |f| %>
   <%= render 'common/errors', resource: @ticket %>
 
   <%= f.hidden_field :train_id %>
@@ -15,5 +15,5 @@
     <%= f.text_field :document %>
   </div>
 
-  <%= f.submit "#{@ticket.new_record? ? 'Купить' : 'Обновить' }" %>
+  <%= f.submit 'Купить' %>
 <% end %>

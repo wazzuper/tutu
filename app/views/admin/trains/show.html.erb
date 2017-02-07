@@ -1,0 +1,42 @@
+<p>
+  <strong>Номер:</strong>
+  <%= @train.number %>
+</p>
+
+<p>
+  <strong>На станции:</strong>
+  <% if @train.current_station %>
+    <%= @train.current_station.title %>
+  <% else %>
+    не указано
+  <% end %>
+</p>
+
+<p>
+  <strong>Текущий маршрут:</strong>
+  <% if @train.route %>
+    <%= @train.route.name %>
+  <% else %>
+    маршрут не назначен
+  <% end %>
+</p>
+
+<p>
+  <strong>Вагоны в составе поезда:</strong>
+  <% if @train.wagons.empty? %>
+    вагонов у данного поезда нет
+  <% else %>
+    <ul>
+      <% @train.wagons.each do |wagon| %>
+        <li><%= link_to "Вагон №#{wagon.number} - #{wagon.type}", [:admin, wagon] %></li>
+      <% end %>
+    </ul>
+  <% end %>
+</p>
+
+<p>
+<%= link_to 'Добавить вагон', new_admin_train_wagon_path(@train) %>
+</p>
+
+<%= link_to 'Редактировать', edit_admin_train_path(@train) %> |
+<%= link_to 'Назад', admin_trains_path %>
