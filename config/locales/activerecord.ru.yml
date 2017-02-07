@@ -10,9 +10,13 @@ ru:
     attributes:
       railway_station:
         title: 'Название станции'
-        
+
       train:
         number: 'Номер поезда'
+
+      route:
+        name: 'Название маршрута'
+        railway_station_ids: 'Текущие станции'
     errors:
       messages:
         blank: 'не может быть пустым'

@@ -4,11 +4,11 @@
   <div class="field">
     <%= f.label :name %>
     <%= f.text_field :name %>
-    <%= f.label :railway_station_ids, 'Текущие станции' %>
+    <%= f.label :railway_station_ids %>
     <%= f.collection_select :railway_station_ids, RailwayStation.all, :id, :title, {}, { multiple: true } %>
   </div>
 
   <div class="actions">
-    <%= f.submit "#{@route.new_record? ? 'Создать' : 'Изменить'}" %>
+    <%= f.submit t('.submit', action: @route.new_record? ? t('common.create') : t('common.edit')) %>
   </div>
 <% end %>

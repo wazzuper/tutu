@@ -22,3 +22,16 @@ ru:
         title: 'Название станции:'
       form:
         sumbit: '%{action} станцию'
+
+    routes:
+      index:
+        title: 'Список маршрутов'
+        add_route: 'Добавить маршрут'
+      new:
+        title: 'Создать новый маршрут'
+      edit:
+        title: 'Изменить маршрут'
+      show:
+        title: 'Название маршрута:'
+      form:
+        submit: '%{action} маршрут'
