@@ -20,6 +20,16 @@ ru:
       route:
         name: 'Название маршрута'
         railway_station_ids: 'Текущие станции'
+
+      wagon:
+        type: 'Тип вагона'
+        top_seats: 'Количество верхних мест'
+        bottom_seats: 'Количество нижних мест'
+        side_top_seats: 'Количество верхних боковых мест'
+        side_bottom_seats: 'Количество нижних боковых мест'
+        sitting_seats: 'Количество сидячих мест'
+        train: 'Поезд'
+
     errors:
       messages:
         blank: 'не может быть пустым'

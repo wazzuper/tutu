@@ -49,3 +49,14 @@ ru:
         add_wagon: 'Добавить вагон'
       form:
         submit: '%{action} поезд'
+
+    wagons:
+      index:
+        title: 'Список вагонов'
+        add_wagon: 'Добавить вагон'
+      new:
+        title: 'Создать новый вагон'
+      edit:
+        title: 'Изменить вагон'
+      form:
+        submit: '%{action} вагон'
