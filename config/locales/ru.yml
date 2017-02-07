@@ -35,3 +35,17 @@ ru:
         title: 'Название маршрута:'
       form:
         submit: '%{action} маршрут'
+
+    trains:
+      index:
+        title: 'Список поездов'
+        add_train: 'Добавить поезд'
+      new:
+        title: 'Создать новый поезд'
+      edit:
+        title: 'Изменить поезд'
+      show:
+        title: 'Номер поезда:'
+        add_wagon: 'Добавить вагон'
+      form:
+        submit: '%{action} поезд'
