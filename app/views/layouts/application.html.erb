@@ -49,10 +49,11 @@
         <div class="navbar-collapse collapse navbar-responsive-collapse">
           <ul class="nav navbar-nav">
           <% if user_signed_in? %>
-            <li><%= link_to "Выйти", destroy_user_session_path, method: :delete %></li>
-            
+            <li><%= link_to t('searches.show.title'), search_path %></li>
+            <li><%= link_to t('tickets.index.title'), tickets_path %></li>
+            <li><%= link_to t('devise.sessions.sign_out'), destroy_user_session_path, method: :delete %></li>
           <% else %>
-            <li><%= link_to "Войти", new_user_session_path  %></li>
+            <li><%= link_to t('devise.sessions.sign_in'), new_user_session_path  %></li>
           <% end %>
           </ul>
         </div>
@@ -68,7 +69,9 @@
       </div><!--/row-->
 
       <footer>
-        <p>&copy; Company 2017</p>
+        <p>&copy; 2016 Артем Коротченко <br>
+        Учебный проект в онлайн-школе <a href="http://www.thinknetica.com/">Thinknetica</a>
+      </p> 
       </footer>
 
     </div> <!-- /container -->

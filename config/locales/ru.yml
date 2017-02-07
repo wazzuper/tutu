@@ -8,6 +8,23 @@ ru:
     confirm: 'Вы уверены?'
     errors: 'При заполнении формы возникли ошибки'
     main_menu: 'Главное меню'
+    buy: 'Купить билет'
+    show_ticket: 'Показать информацию о билете'
+    refund_ticket: 'Вернуть билет'
+
+  searches:
+    show:
+      title: 'Поиск билетов'
+
+  tickets:
+    index:
+      title: 'Список ваших билетов'
+      buy_new_ticket: 'Купить новый билет'
+    new:
+      title: 'Покупка билета'
+    show:
+      title: 'Информация о билете'
+      back_to_tickets: 'Назад к списку ваших билетов'
 
   admin:
     railway_stations:
@@ -73,3 +90,7 @@ ru:
         title: 'Информация о билете'
       form:
         submit: '%{action} билет'
+
+    welcome:
+      index:
+        title: 'Tutu - административная часть'
