@@ -1,0 +1,14 @@
+ru:
+  common:
+    create: 'Создать'
+    edit: 'Изменить'
+    back: 'Назад'
+    errors: 'При заполнении формы возникли ошибки'
+
+
+  admin:
+    railway_stations:
+      new:
+        title: 'Создать новую станцию'
+      form:
+        sumbit: '%{action} станцию'
