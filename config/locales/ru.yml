@@ -2,13 +2,23 @@ ru:
   common:
     create: 'Создать'
     edit: 'Изменить'
+    show: 'Показать'
     back: 'Назад'
+    delete: 'Удалить'
+    confirm: 'Вы уверены?'
     errors: 'При заполнении формы возникли ошибки'
-
+    main_menu: 'Главное меню'
 
   admin:
     railway_stations:
+      index:
+        title: 'Список станций'
+        add_station: 'Добавить станцию'
       new:
         title: 'Создать новую станцию'
+      edit:
+        title: 'Изменить станцию'
+      show:
+        title: 'Название станции:'
       form:
         sumbit: '%{action} станцию'

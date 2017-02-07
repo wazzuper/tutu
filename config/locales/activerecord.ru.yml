@@ -1,8 +1,16 @@
 ru:
   activerecord:
+    models:
+      railway_station: 'Железнодорожная станция'
+      train: 'Поезд'
+      route: 'Маршрут'
+      ticket: 'Билет'
+      wagon: 'Вагон'
+
     attributes:
       railway_station:
         title: 'Название станции'
+        
       train:
         number: 'Номер поезда'
     errors:
