@@ -1,4 +1,4 @@
-<h1>Информация о билете</h1>
+<h1><%= t('.title') %></h1>
 
 <p><strong>Билет купил:</strong> <%= @ticket.user.email %></p>
 <p><strong>ФИО:</strong> <%= @ticket.fio %></p>
@@ -7,5 +7,5 @@
 <p><strong>Станция назначения:</strong> <%= @ticket.last_station.title %></p>
 
 
-<%= link_to 'Редактировать', edit_admin_ticket_path(@ticket) %> |
-<%= link_to 'Назад', admin_tickets_path %>
+<%= link_to t('common.edit'), edit_admin_ticket_path(@ticket) %> |
+<%= link_to t('common.back'), admin_tickets_path %>

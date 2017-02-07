@@ -1,6 +1,4 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Список билетов</h1>
+<h1><%= t('.title') %></h1>
 
 <table>
   <thead>
@@ -17,4 +15,5 @@
 
 <br>
 
-<%= link_to 'Добавить билет', new_admin_ticket_path %>
+<%= link_to t('common.main_menu'), admin_welcome_index_path %>
+<%= link_to t('.add_ticket'), new_admin_ticket_path %>

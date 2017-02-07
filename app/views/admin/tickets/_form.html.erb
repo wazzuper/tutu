@@ -2,34 +2,34 @@
   <%= render 'common/errors', resource: @ticket %>
 
   <div class="field">
-    <%= f.label :first_station_id, 'Начальная станция' %>
+    <%= f.label :first_station_id %>
     <%= f.collection_select :first_station_id, RailwayStation.all, :id, :title %>
   </div>
 
   <div class="field">
-    <%= f.label :last_station_id, 'Конечная станция' %>
+    <%= f.label :last_station_id %>
     <%= f.collection_select :last_station_id, RailwayStation.all, :id, :title %>
   </div>
 
   <div class="field">
-    <%= f.label :train_id, 'Поезд' %>
+    <%= f.label :train_id %>
     <%= f.collection_select :train_id, Train.all, :id, :number %>
   </div>
 
   <div class="field">
-    <%= f.label :fio, 'ФИО' %>
+    <%= f.label :fio %>
     <%= f.text_field :fio %>
   </div>
 
   <div class="field">
-    <%= f.label :document, 'Паспортные данные' %>
+    <%= f.label :document %>
     <%= f.text_field :document %>
   </div>
 
   <div class="field">
-    <%= f.label :user_id, 'Зарегистрированные пользователи' %>
+    <%= f.label :user_id %>
     <%= f.collection_select :user_id, User.all, :id, :email %>
   </div>
 
-  <%= f.submit "#{@ticket.new_record? ? 'Создать' : 'Обновить' }" %>
+  <%= f.submit t('.submit', action: @ticket.new_record? ? t('common.create') : t('common.edit')) %>
 <% end %>

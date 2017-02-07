@@ -30,6 +30,14 @@ ru:
         sitting_seats: 'Количество сидячих мест'
         train: 'Поезд'
 
+      ticket:
+        first_station_id: 'Начальная станция'
+        last_station_id: 'Конечная станция'
+        train_id: 'Поезд'
+        fio: 'ФИО'
+        document: 'Паспортные данные'
+        user_id: 'Зарегистрированные пользователи'
+        
     errors:
       messages:
         blank: 'не может быть пустым'

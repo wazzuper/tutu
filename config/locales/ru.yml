@@ -60,3 +60,16 @@ ru:
         title: 'Изменить вагон'
       form:
         submit: '%{action} вагон'
+
+    tickets:
+      index:
+        title: 'Список билетов'
+        add_ticket: 'Добавить билет'
+      new:
+        title: 'Создать новый билет'
+      edit:
+        title: 'Изменить билет'
+      show:
+        title: 'Информация о билете'
+      form:
+        submit: '%{action} билет'

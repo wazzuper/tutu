@@ -1,6 +1,6 @@
 <tr>
   <td><%= "#{ticket.first_station.title} - #{ticket.last_station.title}" %></td>
-  <td><%= link_to 'Показать', [:admin, ticket] %></td>
-  <td><%= link_to 'Редактировать', edit_admin_ticket_path(ticket) %></td>
-  <td><%= link_to 'Удалить', [:admin, ticket], method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+  <td><%= link_to t('common.show'), [:admin, ticket] %></td>
+  <td><%= link_to t('common.edit'), edit_admin_ticket_path(ticket) %></td>
+  <td><%= link_to t('common.delete'), [:admin, ticket], method: :delete, data: { confirm: t('common.confirm') } %></td>
 </tr>
