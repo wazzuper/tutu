@@ -1,15 +1,22 @@
-<h1>Информация о билете</h1>
-
-<% if current_user.id != @ticket.user.id %>
-  У вас нет прав для просмотра чужих билетов
-<% else %>
-  <p><strong>Билет купил:</strong> <%= @ticket.user.email %></p>
-  <p><strong>ФИО:</strong> <%= @ticket.fio %></p>
-  <p><strong>Данные документа:</strong> <%= @ticket.document %></p>
-  <p><strong>Станция отправления:</strong> <%= @ticket.first_station.title %></p>
-  <p><strong>Станция назначения:</strong> <%= @ticket.last_station.title %></p>
-<% end %>
+<div class="row">
+  <div class="panel panel-info">
+    <div class="panel-heading text-center">
+      <h1><%= t('.title') %></h1>
+    </div>
+    <div class="panel-body">
+      <% if current_user.id != @ticket.user.id %>
+        У вас нет прав для просмотра чужих билетов
+      <% else %>
+        <p><strong>Билет купил:</strong> <%= @ticket.user.email %></p>
+        <p><strong>ФИО:</strong> <%= @ticket.fio %></p>
+        <p><strong>Данные документа:</strong> <%= @ticket.document %></p>
+        <p><strong>Станция отправления:</strong> <%= @ticket.first_station.title %></p>
+        <p><strong>Станция назначения:</strong> <%= @ticket.last_station.title %></p>
+      <% end %>
+    </div>
+  </div>
+</div>
 
 <br>
 
-<%= link_to 'Назад к списку ваших билетов', tickets_path %>
+<%= link_to t('.back_to_tickets'), tickets_path %>

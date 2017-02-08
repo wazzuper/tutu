@@ -1,0 +1,96 @@
+ru:
+  common:
+    create: 'Создать'
+    edit: 'Изменить'
+    show: 'Показать'
+    back: 'Назад'
+    delete: 'Удалить'
+    confirm: 'Вы уверены?'
+    errors: 'При заполнении формы возникли ошибки'
+    main_menu: 'Главное меню'
+    buy: 'Купить билет'
+    show_ticket: 'Показать информацию о билете'
+    refund_ticket: 'Вернуть билет'
+
+  searches:
+    show:
+      title: 'Поиск билетов'
+
+  tickets:
+    index:
+      title: 'Список ваших билетов'
+      buy_new_ticket: 'Купить новый билет'
+    new:
+      title: 'Покупка билета'
+    show:
+      title: 'Информация о билете'
+      back_to_tickets: 'Назад к списку ваших билетов'
+
+  admin:
+    railway_stations:
+      index:
+        title: 'Список станций'
+        add_station: 'Добавить станцию'
+      new:
+        title: 'Создать новую станцию'
+      edit:
+        title: 'Изменить станцию'
+      show:
+        title: 'Название станции:'
+      form:
+        sumbit: '%{action} станцию'
+
+    routes:
+      index:
+        title: 'Список маршрутов'
+        add_route: 'Добавить маршрут'
+      new:
+        title: 'Создать новый маршрут'
+      edit:
+        title: 'Изменить маршрут'
+      show:
+        title: 'Название маршрута:'
+      form:
+        submit: '%{action} маршрут'
+
+    trains:
+      index:
+        title: 'Список поездов'
+        add_train: 'Добавить поезд'
+      new:
+        title: 'Создать новый поезд'
+      edit:
+        title: 'Изменить поезд'
+      show:
+        title: 'Номер поезда:'
+        add_wagon: 'Добавить вагон'
+      form:
+        submit: '%{action} поезд'
+
+    wagons:
+      index:
+        title: 'Список вагонов'
+        add_wagon: 'Добавить вагон'
+      new:
+        title: 'Создать новый вагон'
+      edit:
+        title: 'Изменить вагон'
+      form:
+        submit: '%{action} вагон'
+
+    tickets:
+      index:
+        title: 'Список билетов'
+        add_ticket: 'Добавить билет'
+      new:
+        title: 'Создать новый билет'
+      edit:
+        title: 'Изменить билет'
+      show:
+        title: 'Информация о билете'
+      form:
+        submit: '%{action} билет'
+
+    welcome:
+      index:
+        title: 'Tutu - административная часть'

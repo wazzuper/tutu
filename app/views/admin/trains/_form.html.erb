@@ -7,21 +7,21 @@
   </div>
 
   <div class="field">
-    <%= f.label :current_station, 'Текущая станция' %>
+    <%= f.label :current_station %>
     <%= f.collection_select :current_station_id, RailwayStation.all, :id, :title %>
   </div>
 
   <div class="field">
-    <%= f.label :route, 'Текущие маршруты' %>
+    <%= f.label :route %>
     <%= f.collection_select :route_id, Route.all, :id, :name %>
   </div>
 
   <div class="field">
-    <%= f.label :sort_wagon, 'Выводить вагоны в обычном порядке?' %>
+    <%= f.label :sort_wagon %>
     <%= f.check_box :sort_wagon %>
   </div>
 
   <div class="actions">
-    <%= f.submit "#{@train.new_record? ? 'Создать' : 'Изменить'}" %>
+    <%= f.submit t('.submit', action: @train.new_record? ? t('common.create') : t('common.edit')) %>
   </div>
 <% end %>

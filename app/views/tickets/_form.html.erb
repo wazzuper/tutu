@@ -1,19 +1,25 @@
-<%= form_for @ticket do |f| %>
-  <%= render 'common/errors', resource: @ticket %>
+<div class="row">
+  <div class="col-md-8">
+    <%= form_for @ticket do |f| %>
+      <%= render 'common/errors', resource: @ticket %>
 
-  <%= f.hidden_field :train_id %>
-  <%= f.hidden_field :first_station_id %>
-  <%= f.hidden_field :last_station_id %>
+      <%= f.hidden_field :train_id %>
+      <%= f.hidden_field :first_station_id %>
+      <%= f.hidden_field :last_station_id %>
 
-  <div class="field">
-    <%= f.label :fio, 'ФИО' %>
-    <%= f.text_field :fio %>
+      <div class="form-group">
+        <%= f.label :fio %>
+        <%= f.text_field :fio %>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :document %>
+        <%= f.text_field :document %>
+      </div>
+
+      <div class="actions form-group">
+        <%= f.submit t('common.buy'), class: "btn btn-success" %>
+      </div>
+    <% end %>
   </div>
-
-  <div class="field">
-    <%= f.label :document, 'Паспортные данные' %>
-    <%= f.text_field :document %>
-  </div>
-
-  <%= f.submit 'Купить' %>
-<% end %>
+</div>

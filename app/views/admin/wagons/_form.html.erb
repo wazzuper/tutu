@@ -2,41 +2,41 @@
   <%= render 'common/errors', resource: @wagon %>
 
   <div class="field">
-    <%= f.label :type, 'Тип вагона'%>
+    <%= f.label :type %>
     <%= f.select :type, Wagon::TYPES, {}%>
   </div>
 
   <div class="field">
-    <%= f.label :top_seats, 'Количество верхних мест'%>
+    <%= f.label :top_seats %>
     <%= f.text_field :top_seats%>
   </div>
 
   <div class="field">
-    <%= f.label :bottom_seats, 'Количество нижних мест'%>
+    <%= f.label :bottom_seats %>
     <%= f.text_field :bottom_seats%>
   </div>
 
   <div class="field">
-    <%= f.label :side_top_seats, 'Количество верхних боковых мест'%>
+    <%= f.label :side_top_seats %>
     <%= f.text_field :side_top_seats%>
   </div>
 
   <div class="field">
-    <%= f.label :side_bottom_seats, 'Количество нижних боковых мест'%>
+    <%= f.label :side_bottom_seats %>
     <%= f.text_field :side_bottom_seats%>
   </div>
 
   <div class="field">
-    <%= f.label :sitting_seats, 'Количество сидячих мест'%>
+    <%= f.label :sitting_seats %>
     <%= f.text_field :sitting_seats%>
   </div>
 
   <div class="field">
-    <%= f.label :train, 'Выберите поезд' %>
+    <%= f.label :train %>
     <%= f.collection_select :train_id, Train.all, :id, :number %>
   </div>
 
   <div class="actions">
-    <%= f.submit "#{@wagon.new_record? ? 'Создать' : 'Изменить'}" %>
+    <%= f.submit t('.submit', action: @wagon.new_record? ? t('common.create') : t('common.edit')) %>
   </div>
 <% end %>
