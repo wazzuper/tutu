@@ -32,7 +32,7 @@ class Admin::TrainsController < Admin::BaseController
   def update
     respond_to do |format|
       if @train.update(train_params)
-        format.html { redirect_to [:admin, @train], notice: 'Поезд был обновлен' }
+        format.html { redirect_to admin_trains_path, notice: 'Поезд был обновлен' }
         # format.json { render :show, status: :ok, location: @train }
       else
         format.html { render :edit }
